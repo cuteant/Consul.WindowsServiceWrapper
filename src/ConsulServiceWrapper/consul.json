@@ -1,0 +1,14 @@
+{
+  "server": true,
+  "bootstrap_expect": 1,
+  "advertise_addr": "127.0.0.1",
+  "data_dir": "D:\\Consul\\data\\",
+  "client_addr": "0.0.0.0",
+  "log_level": "INFO",
+  "ports": {
+    "dns": 53
+  },
+  "dns_config": {
+    "only_passing": true
+  }
+}
