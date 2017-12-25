@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
@@ -8,6 +10,15 @@ namespace ConsulServiceWrapper
   {
     public ProcessStartInfo GetProcessStartInfo(string executable, ServiceInstance instance)
     {
+      if (string.IsNullOrWhiteSpace(executable))
+      {
+        executable = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "consul.exe");
+      }
+      if (!Path.IsPathRooted(executable))
+      {
+        executable = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, executable);
+      }
+
       var arguments = GetProcessArguments(instance);
 
       return new ProcessStartInfo(executable, arguments)
