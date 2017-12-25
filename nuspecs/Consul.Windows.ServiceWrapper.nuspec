@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Consul.Windows.ServiceWrapper</id>
+    <version>$version$</version>
+    <title>Consul.Windows.ServiceWrapper</title>
+    <authors>Seabiscuit</authors>
+    <projectUrl>https://github.com/cuteant/Consul.WindowsServiceWrapper</projectUrl>
+    <licenseUrl>https://github.com/cuteant/Consul.WindowsServiceWrapper/blob/master/LICENSE</licenseUrl>
+    <summary>Consul.Windows.ServiceWrapper.</summary>
+    <description>Consul.Windows.ServiceWrapper.</description>
+    <tags>consul windows service wrapper</tags>
+    <dependencies>
+      <dependency id="Topshelf" version="4.0.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- Auto-import MSBuild targets and props files into target project.
+           http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package#Import_MSBuild_targets_and_props_files_into_project_(Requires_NuGet_2.5_or_above)
+      -->
+    <file src="..\Deploy\Net45\ConsulServiceWrapper.exe" target="tools" />
+    <file src="..\Deploy\Net45\ConsulServiceWrapper.exe.config" target="tools" />
+  </files>
+</package>
